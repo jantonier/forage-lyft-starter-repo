@@ -1,5 +1,7 @@
 import unittest
 from datetime import datetime
+import sys
+sys.path.append('../FORAGE-LYFT-STARTER-REPO')
 
 from engine.model.calliope import Calliope
 from engine.model.glissade import Glissade
@@ -181,7 +183,7 @@ class TestThovex(unittest.TestCase):
         last_service_mileage = 0
 
         car = Thovex(last_service_date, current_mileage, last_service_mileage)
-        self.assertFalse(car.needs_service())
+        self.assertTrue(car.needs_service())
 
 
 if __name__ == '__main__':
